@@ -119,7 +119,7 @@ def main():
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('calendar', 'v3', http=http)
 
-    file = open('/home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt')
+    file = open('evenement.txt')
     myEvent = file.readlines()
     summary = myEvent[0].capitalize()
     location = myEvent[1].capitalize()

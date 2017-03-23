@@ -131,7 +131,7 @@ def main():
 
         reply += date + u" à " + heure + ", " + summary + ".\n"
         
-    fichier = open("/home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt", "w")
+    fichier = open("evenement.txt", "w")
     fichier.write(reply.encode("utf-8"))
     fichier.close
 

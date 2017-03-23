@@ -11,39 +11,39 @@
 
 jv_calendar_createEvent()
 {
-	python -u /home/pi/jarvis/plugins/jarvis-calendar/python/createEvent.py
+	python -u python/createEvent.py
 }
 
 jv_calendar_lookForEvent()
 {
-	python -u /home/pi/jarvis/plugins/jarvis-calendar/python/lookForEvent.py 
+	python -u python/lookForEvent.py 
 	while read line
 	do
 		say "$line"
-	done < /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt
+	done < python/evenement.txt
 }
 jv_calendar_nextEvent()
 {
-	python -u /home/pi/jarvis/plugins/jarvis-calendar/python/nextEvent.py
+	python -u python/nextEvent.py
 	while read line
 	do
 		say "$line"
-	done < /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt
+	done < python/evenement.txt
 }
 
 jv_calendar_todayEvent()
 {
-	python -u /home/pi/jarvis/plugins/jarvis-calendar/python/todayEvent.py
+	python -u python/todayEvent.py
 	while read line
 	do
 		say "$line"
-	done < /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt
+	done < python/evenement.txt
 }
 jv_calendar_tomorrowEvent()
 {
-	python -u /home/pi/jarvis/plugins/jarvis-calendar/python/tomorrowEvent.py
+	python -u python/tomorrowEvent.py
 	while read line
 	do
 		say "$line"
-	done < //home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt
+	done < python/evenement.txt
 }

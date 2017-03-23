@@ -130,7 +130,7 @@ def main():
     else :
         reply += "Vous avez " + str(i) + u" événement aujourd'hui\n" + evenements
         
-    fichier = open("/home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt", "w")
+    fichier = open("evenement.txt", "w")
     fichier.write(reply.encode("utf-8"))
     fichier.close
 

@@ -100,7 +100,7 @@ def main():
         orderBy='startTime').execute()
     events = eventsResult.get('items', [])
         
-    file = open('/home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt')
+    file = open('evenement.txt')
     myEvent = file.readlines()
     summary = myEvent[0].capitalize()
     file.close()
@@ -133,7 +133,7 @@ def main():
     if eventFound == False :
         reply = reply + u"Aucun événement trouvé sous le nom " + summary
         
-    file = open("/home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt", "w")
+    file = open("evenement.txt", "w")
     file.write(reply.encode("utf-8"))
     file.close
 

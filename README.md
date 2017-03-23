@@ -1,54 +1,77 @@
 ## Dependance
-
-Ce plugin à besoin de la librairie Google client
+Ce plugin Ã  besoin de la librairie Google client
 Executez la commande suivante pour installer la librairie
 sudo pip install --upgrade google-api-python-client
 
 ## Description
-
-Ce plugin permet de gérer son agenda "Google Calendar"
+Ce plugin permet de gÃ©rer son agenda "Google Calendar"
 
 Vous pouvez :
-- consulter les prochains événements,
-- consulter les événements du jour,
-- consulter les événements du lendemain,
-- demander quand aura lieu un événement précis,
-- creer un événement.
+- consulter les prochains Ã©vÃ©nements,
+- consulter les Ã©vÃ©nements du jour,
+- consulter les Ã©vÃ©nements du lendemain,
+- demander quand aura lieu un Ã©vÃ©nement prÃ©cis,
+- creer un Ã©vÃ©nement.
 
-Lors de la création de l'événement, plusieurs questions seront demandées à l'utilisateur.
+Lors de la crÃ©ation de l'Ã©vÃ©nement, plusieurs questions seront demandÃ©es Ã  l'utilisateur.
 
 Concernant la date, il est possible de donner une date sous la forme :
-- jour mois année ex : 10 aout 2017,
+- jour mois annÃ©e ex : 10 aout 2017,
 - Aujourd'hui,
 - Demain.
 
-
 ## Usage
 ```
-You: Quel sont les événements à venir ?
+You: Quel sont les Ã©vÃ©nements Ã  venir ?
 Jarvis: Je regarde.
-Jarvis: Vos 3 prochains événements sont :
-Jarvis: Aujoud'hui à 19 heure, Repas chez la belle-mère.
-Jarvis: Demain à 9 heure, Rendez vous chez le dentiste.
-Jarvis: Le 23 septembre à 16 heure, Fête d'anniverssaire d'Emilie
+Jarvis: Vos 3 prochains Ã©vÃ©nements sont :
+Jarvis: Aujoud'hui Ã  19 heure, Repas chez la belle-mÃ¨re.
+Jarvis: Demain Ã  9 heure, Rendez vous chez le dentiste.
+Jarvis: Le 23 septembre Ã  16 heure, FÃªte d'anniverssaire d'Emilie
 
-You: Ajoute-moi un événement
-Jarvis: Oui bien sûr, quel est le titre de l'événement à ajouter?
+You: Ajoute-moi un Ã©vÃ©nement
+Jarvis: Oui bien sÃ»r, quel est le titre de l'Ã©vÃ©nement Ã  ajouter?
 You: Aller chercher des fleurs pour la st-Valentin
-Jarvis: Où doit se dérouler l'événement?
+Jarvis: OÃ¹ doit se dÃ©rouler l'Ã©vÃ©nement?
 You: A la boutique de fleurs
-Jarvis: Donnez moi une description petite description de l'événement
-You: Petite pensée pour ma femme pour la St-Valentin
-Jarvis: Quel jour aura lieu l'événement?
-You: 14 février 2017
+Jarvis: Donnez moi une description petite description de l'Ã©vÃ©nement
+You: Petite pensÃ©e pour ma femme pour la St-Valentin
+Jarvis: Quel jour aura lieu l'Ã©vÃ©nement?
+You: 14 fÃ©vrier 2017
 Jarvis: A quelle heure ?
 You: 10 heure
-Jarvis: Quel jour prendra fin l'événement
-You: 14 février 2017
+Jarvis: Quel jour prendra fin l'Ã©vÃ©nement
+You: 14 fÃ©vrier 2017
 Jarvis: Quelle heure?
 You: 10 heure 30
-Jarvis: L'événement vient d'être ajouté au calendrier.
+Jarvis: L'Ã©vÃ©nement vient d'Ãªtre ajoutÃ© au calendrier.
 ```
+
+## Activation de l'API Google Calendar
+a) Rendez-vous sur cet adresse https://console.developers.google.com/flows/enableapi?apiid=calendar afin de crÃ©er ou sÃ©lectionner un projet dans la console Google Developers et activer automatiquement l'API.
+- Cliquez sur "Continuer",
+- Cliquez sur "Passer Ã  l'Ã©tape "Identifiants".
+
+b) Dans la page "Ajouter des identifiants au projet"
+
+  1) DÃ©terminer les identifiats dont vous avez besoin
+- Quelle API utilisez-vous : Laisser "Google Calendar API".
+- Quelle plate-forme utilisez-vous pour appeler l'API : Choisissez "Autre plate-forme avec interface utilisateur
+- A quelles donnÃ©es allez-vous accÃ©der ? : Cochez "DonnÃ©es utilisateur
+
+Cliquez sur "De quels identifiants ai-je besoin?"
+
+  2) CrÃ©er un ID client OAuth 2.0
+- Choisissez un nom de client puis cliquez sur "Creer un ID client
+
+  3) Configurer l'Ã©cran d'autorisation d'OAuth 2.0
+- Adresse e-mail : enregistrer votre adresse gmail.com
+- Nom de produit affichÃ© pour les utilisateurs : Donnez un nom de produit
+- Cliquez sur "Continuer"
+
+  4) Cliquer sur TÃ©lÃ©charger, renomer le fichier "client_secret.json" et placer le dans
+le repertoire jarvis/plugins/jarvis-calendar/python
+- Cliquez sur "OK"
 
 ## Author
 [RobyBioloid](https://github.com/RobyBioloid/jarvis-calendar)

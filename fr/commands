@@ -1,0 +1,13 @@
+*AJOUTE*EVENEMENT*== say "Oui bien sûr. Quel est le titre de l'événement à ajouter ?"
+> (*)==echo "(1)" > /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt && say "Où doit il se dérouler ?"
+>> (*)==echo "(1)" >> /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt && say "Donnez moi une description de l'événement ?"
+>>> (*)==echo "(1)" >> /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt && say "Quel jour aura t'il lieu ?"
+>>>> (*)==echo "(1)" >> /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt && say "A quelle heure ?"
+>>>>> (*)==echo "(1)" >> /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt && say "Quel jour prendra t'il fin?"
+>>>>>> (*)==echo "(1)" >> /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt && say "A quelle heure ?"
+>>>>>>> (*)==echo "(1)" >> /home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt && jv_calendar_createEvent && say "L'événement vient d'être ajouté à votre calendrier"
+
+*QUAND*EVENEMENT (*)==echo "(1)" >/home/pi/jarvis/plugins/jarvis-calendar/fr/evenement.txt && jv_calendar_lookForEvent
+*EVENEMENT*JOUR*== jv_calendar_todayEvent
+*EVENEMENT*DEMAIN*== jv_calendar_tomorrowEvent
+*EVENEMENT*== jv_calendar_nextEvent

@@ -1,8 +1,49 @@
 #!/bin/bash
-# Here you can create functions which will be available from the commands file
-# You can also use here user variables defined in your config file
-# To avoid conflicts, name your function like this
-# pg_XX_myfunction () { }
-# pg for PluGin
-# XX is a short code for your plugin, ex: ww for Weather Wunderground
-# You can use translations provided in the language folders functions.sh
+# Here you can define translations to be used in the plugin functions file
+# the below code is an sample to be reused:
+# 1) uncomment to function below
+# 2) replace XXX by your plugin name (short)
+# 3) remove and add your own translations
+# 4) you can the arguments $2, $3 passed to this function
+# 5) in your plugin functions.sh file, use it like this:
+#      say "$(pv_myplugin_lang the_answer_is "oui")"
+#      => Jarvis: La réponse est oui
+
+jv_calendar_createEvent()
+{
+	python -u ~/jarvis/plugins/jarvis-calendar/fr/python/createEvent.py
+}
+
+jv_calendar_lookForEvent()
+{
+	python -u ~/jarvis/plugins/jarvis-calendar/fr/python/lookForEvent.py 
+	while read line
+	do
+		say "$line"
+	done < ~/jarvis/plugins/jarvis-calendar/fr/python/evenement.txt
+}
+jv_calendar_nextEvent()
+{
+	python -u ~/jarvis/plugins/jarvis-calendar/fr/python/nextEvent.py
+	while read line
+	do
+		say "$line"
+	done < ~/jarvis/plugins/jarvis-calendar/fr/python/evenement.txt
+}
+
+jv_calendar_todayEvent()
+{
+	python -u ~/jarvis/plugins/jarvis-calendar/fr/python/todayEvent.py
+	while read line
+	do
+		say "$line"
+	done < ~/jarvis/plugins/jarvis-calendar/fr/python/evenement.txt
+}
+jv_calendar_tomorrowEvent()
+{
+	python -u ~/jarvis/plugins/jarvis-calendar/fr/python/tomorrowEvent.py
+	while read line
+	do
+		say "$line"
+	done < ~/jarvis/plugins/jarvis-calendar/fr/python/evenement.txt
+}

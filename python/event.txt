@@ -1,4 +1,1 @@
-Vous avez 3 événement aujourd'hui
-Aujourd'hui à 05 heure 30, vous avez l'événement : Test evenement.
-Aujourd'hui à 10 heure, vous avez l'événement : Travail chez Spidzza Grand mère.
-Aujourd'hui à 19 heure, vous avez l'événement : Travail chez Spidzza Grand mère.
+Pensez à Activer l'API Google Calendar comme exliqué dans le fichier 'activation_API' et pensez également à déposer le fichier client_secret.json dans le dossier "python" .

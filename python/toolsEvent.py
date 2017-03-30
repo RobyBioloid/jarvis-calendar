@@ -14,8 +14,8 @@ except ImportError:
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/calendar-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/calendar'
-CLIENT_SECRET_FILE = 'client_secret.json'
-APPLICATION_NAME = 'Google Calendar API Python Quickstart'
+CLIENT_SECRET_FILE = '/home/pi/jarvis/plugins/jarvis-calendar/python/client_secret.json'
+APPLICATION_NAME = 'Google Calendar API'
 
 EVENT_PATH = os.getcwd() + "/plugins/jarvis-calendar/python/event.txt"
 

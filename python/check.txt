@@ -1,0 +1,7 @@
+Etes-vous certain de vouloir ajouter l'événement avec comme Titre :test évènement
+, lieu : à valence
+, description : à de description
+, avec comme date de début : demain
+, à baise
+, avec comme date de fin : demain
+, à 11h 30

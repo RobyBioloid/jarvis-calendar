@@ -14,6 +14,8 @@ def createEvent():
 
     file = open(EVENT_PATH)
     myEvent = file.readlines()
+    file.close()
+    
     summary = myEvent[0].capitalize()
     location = myEvent[1].capitalize()
     description = myEvent[2].capitalize()
@@ -31,10 +33,26 @@ def createEvent():
         dateTime.append(str(today.day + 1))
         dateTime.append(str(today.month))
         dateTime.append(str(today.year))
+    else :
+        dateTime[0] = get_numDay(dateTime[0])
         
-    heure = myEvent[4].split()
+    h = myEvent[4]
+    heure = ""
+    i = 0
+    while i < len(h) :
+        if h[i] == "h" :
+            if h[i-1] != " " :
+                heure += " " + "h"
+            else :
+                heure += "h"
+        else :
+            heure += h[i]
+        i += 1
+
+    heure = heure.split()
+
     if int(heure[0]) < 10 :
-       heure[0] = '0' + heure[0]
+       heure[0] = '0' + str(heure[0])
     if len(heure) > 2 :
         heure[2] = get_minute(str(heure[2]))
     else :
@@ -55,8 +73,23 @@ def createEvent():
         dateTime.append(str(today.day + 1))
         dateTime.append(str(today.month))
         dateTime.append(str(today.year))
-        
-    heure = myEvent[6].split()
+    else :
+        dateTime[0] = get_numDay(dateTime[0])
+
+    h = myEvent[6]
+    heure = ""
+    i = 0
+    while i < len(h) :
+        if h[i] == "h" :
+            if h[i-1] != " " :
+                heure += " " + "h"
+            else :
+                heure += "h"
+        else :
+            heure += h[i]
+        i += 1
+
+    heure = heure.split()        
     if int(heure[0]) < 10 :
        heure[0] = '0' + heure[0]
     if len(heure) > 2 :

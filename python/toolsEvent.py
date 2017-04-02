@@ -18,7 +18,39 @@ CLIENT_SECRET_FILE = '/home/pi/jarvis/plugins/jarvis-calendar/python/client_secr
 APPLICATION_NAME = 'Google Calendar API'
 
 EVENT_PATH = os.getcwd() + "/plugins/jarvis-calendar/python/event.txt"
+CHECK_PATH = os.getcwd() + "/plugins/jarvis-calendar/python/check.txt"
 
+
+def get_numDay(jour) :
+    jour = unicode(jour, 'utf-8')
+    if jour == "un" or jour == "01" or jour == "1" or jour == "1ere" or jour == "1er" or jour =="1e" :
+        return "01"
+    elif jour == "de" or jour == "deux" or jour == "02" or jour == "2" :
+        return "02"
+    elif jour == "trois" or jour =="troie" or jour == "bah" or jour == "03" or jour == "3" :
+        return "03"
+    elif jour == "quatre" or jour == "quatres" or jour == "cat" or jour == "kat" or jour == "04" or jour == "4" :
+        return "04"
+    elif jour == "cinq" or jour == "ca" or jour == "05" or jour == "5" :
+        return "05"
+    elif jour == "six" or jour == "scie" or jour == "si" or jour == "06" or jour == "6" :
+        return "06"
+    elif jour == "sept" or jour == "sete" or jour == "07" or jour == "7" :
+        return "07"
+    elif jour == "huit" or jour == "oui" or jour == "huitre" or jour == "08" or jour == "8" :
+        return "08"
+    elif jour == "neuf" or jour == "oeuf" or jour == "09" or jour == "9" :
+        return "09"
+    elif jour == "dix" or jour == "dis" or jour == "10" :
+        return "10"
+    elif int(jour) > 10 :
+        return str(jour)
+    else :
+        return "99"
+
+
+
+    
 def get_intMonth(mois):
     if mois == "janvier" or mois == '01' or mois == '1':
         return "01"
@@ -44,7 +76,7 @@ def get_intMonth(mois):
         return "11"
     elif mois == "decembre" or mois == '12' :
         return "12"
-    return '01'
+    return '99'
 
 
 def get_minute(minute) :

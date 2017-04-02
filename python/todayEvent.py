@@ -50,7 +50,7 @@ def todayEvent():
             try :
                 description = event['description']
             except :
-                description = "Pas de description"            summary = event['summary']
+                description = "Pas de description"
 
             evenements += date + u" à " + heure + u", vous avez l'événement : " + summary + ".\n"
     if i ==  0:

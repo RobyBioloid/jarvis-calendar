@@ -7,6 +7,7 @@ import os
 from toolsEvent import *
 
 def lookForEvent():
+    '''
     reply = ""
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
@@ -51,9 +52,9 @@ def lookForEvent():
             
     if eventFound == False :
         reply = reply + u"Aucun événement trouvé sous le nom " + summary
-        
+    '''
     file = open(EVENT_PATH, "w")
-    file.write(reply.encode("utf-8"))
+    file.write(u"L'option de recherche n'est pas encore opérationnelle.")
     file.close()
 
 

@@ -45,7 +45,7 @@ def todayEvent():
     if i ==  0:
         reply += u"Aucun événements de prévus pour aujourd'hui.\n"
     elif i == 1 :
-        reply += "Vous avez 1 événement prévus aujourd'hui\n" + evenements
+        reply += u"Vous avez 1 événement prévus aujourd'hui\n" + evenements
     else :
         reply += "Vous avez " + str(i) + u" événements de prévus aujourd'hui\n" + evenements
         

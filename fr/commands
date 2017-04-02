@@ -5,7 +5,9 @@
 >>>> (*)==echo "$order" >> ~/jarvis/plugins/jarvis-calendar/python/event.txt && say "A quelle heure ?"
 >>>>> (*)==echo "$order" >> ~/jarvis/plugins/jarvis-calendar/python/event.txt && say "Quel jour prendra fin l'événement ?"
 >>>>>> (*)==echo "$order" >> ~/jarvis/plugins/jarvis-calendar/python/event.txt && say "A quelle heure ?"
->>>>>>> (*)==echo "$order" >> ~/jarvis/plugins/jarvis-calendar/python/event.txt && jv_calendar_createEvent && say "L'événement à bien été ajouté"
+>>>>>>> (*)==echo "$order" >> ~/jarvis/plugins/jarvis-calendar/python/event.txt && jv_calendar_check
+>>>>>>>> *OUI*== jv_calendar_createEvent && say "L'événement vient d'être ajouté."
+>>>>>>>> *NON*== say "L'événement n'a pas été ajouté."
 
 *QUAND*EVENEMENT (*)==echo "$order" > ~/jarvis/plugins/jarvis-calendar/python/event.txt && jv_calendar_lookForEvent
 *EVENEMENT*JOUR*==echo "" > ~/jarvis/plugins/jarvis-calendar/python/event.txt && jv_calendar_todayEvent

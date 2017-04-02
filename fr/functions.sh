@@ -14,6 +14,14 @@ jv_calendar_createEvent()
 	python -u ~/jarvis/plugins/jarvis-calendar/python/createEvent.py
 }
 
+jv_calendar_check()
+{
+	python -u ~/jarvis/plugins/jarvis-calendar/python/check.py
+	while read line
+	do
+		say "$line"
+	done < ~/jarvis/plugins/jarvis-calendar/python/check.txt
+}
 jv_calendar_lookForEvent()
 {
 	python -u ~/jarvis/plugins/jarvis-calendar/python/lookForEvent.py 

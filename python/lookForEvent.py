@@ -53,9 +53,9 @@ def lookForEvent():
     if eventFound == False :
         reply = reply + u"Aucun événement trouvé sous le nom " + summary
     '''
-    reply = u"L'option de recherche n'est pas encore opérationnelle."
+    reply = u"L'option de recherche est en cours de debug.\n"
     file = open(EVENT_PATH, "w")
-    file.write(reply)
+    file.write(reply.encode('utf-8'))
     file.close()
 
 

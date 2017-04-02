@@ -38,9 +38,20 @@ def tomorrowEvent():
             if debut[14:16] != "00" :
                 heure = heure + " " + debut[14:16]
 
-            summary = event['summary']
-            location = event['location']
-            description = event['description']
+            try :
+                summary = event['summary']
+            except :
+                summary = "Sans titre"
+
+            try :
+                location = event['location']
+            except :
+                location = "Aucun lieu défini"
+
+            try :
+                description = event['description']
+            except :
+                description = "Pas de description"
 
             evenements += date + u" à " + heure + u", vous avez l'événement : " + summary + ".\n"
     if i == 0 :

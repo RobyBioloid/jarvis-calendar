@@ -44,9 +44,20 @@ def nextEvent():
 
         
         fin = event['end'].get('dateTime')
-        summary = event['summary']
-        location = event['location']
-        description = event['description']
+        try :
+            summary = event['summary']
+        except :
+            summary = "Sans titre"
+
+        try :
+            location = event['location']
+        except :
+            location = "Aucun lieu défini"
+
+        try :
+            description = event['description']
+        except :
+            description = "Pas de description"
 
         reply += date + u" à " + heure + ", " + summary + ".\n"
         

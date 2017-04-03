@@ -11,7 +11,8 @@ def createEvent():
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('calendar', 'v3', http=http)
-
+    
+    jetLag = get_jetLag()
     file = open(EVENT_PATH)
     myEvent = file.readlines()
     file.close()
@@ -58,7 +59,7 @@ def createEvent():
     else :
         heure.append('00')
         
-    startDateTime = dateTime[2] + '-' + get_intMonth(dateTime[1]) + '-' + dateTime[0] + 'T' + heure[0] + ':' + heure[2] + ':00+01:00'
+    startDateTime = dateTime[2] + '-' + get_intMonth(dateTime[1]) + '-' + dateTime[0] + 'T' + heure[0] + ':' + heure[2] + jetLag
 
     dateTime = myEvent[5].split()
     if dateTime[0] == 'aujourd\'hui' or dateTime[0] == 'aujourd' or dateTime == 'au' or dateTime[0] == 'aujourdhui':
@@ -97,7 +98,7 @@ def createEvent():
     else :
         heure.append('00')
         
-    endDateTime = dateTime[2] + '-' + get_intMonth(dateTime[1]) + '-' + dateTime[0] + 'T' + heure[0] + ':' + heure[2] + ':00+01:00'
+    endDateTime = dateTime[2] + '-' + get_intMonth(dateTime[1]) + '-' + dateTime[0] + 'T' + heure[0] + ':' + heure[2] + jetLag
 
     
     event = {

@@ -20,6 +20,24 @@ APPLICATION_NAME = 'Google Calendar API'
 EVENT_PATH = os.getcwd() + "/plugins/jarvis-calendar/python/event.txt"
 CHECK_PATH = os.getcwd() + "/plugins/jarvis-calendar/python/check.txt"
 
+def get_jetLag() :
+    today = date.today()
+    startSummerTime = [date(2017, 3, 25), date(2018, 3, 24), date(2019, 3, 30), date(2020, 3, 28),
+                   date(2021, 3, 27), date(2022, 3, 26), date(2023, 3, 25), date(2024, 3, 30),
+                   date(2025, 3, 29), date(2026, 3, 28), date(2027, 3, 27), date(2028, 3, 25),
+                   date(2029, 3, 24), date(2030, 3, 30), date(2031, 3, 29), date(2032, 3, 27)]
+
+    endSummerTime = [date(2017, 10, 28), date(2018, 10, 27), date(2019, 10, 26), date(2020, 10, 24),
+                 date(2021, 10, 30), date(2022, 10, 29), date(2023, 10, 28), date(2024, 10, 26),
+                 date(2025, 10, 25), date(2026, 10, 24), date(2027, 10, 30), date(2028, 10, 28),
+                 date(2029, 10, 27), date(2030, 10, 26), date(2031, 10, 25), date(2032, 10, 30)]
+    
+    i = 0
+    while i < 16 :
+        if today > startSummerTime[i] and today < endSummerTime[i] :
+            return ':00+02:00'
+        else :
+            return ':00+01:00'
 
 def get_numDay(jour) :
     jour = unicode(jour, 'utf-8')

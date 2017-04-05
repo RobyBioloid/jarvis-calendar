@@ -24,3 +24,54 @@ Cliquez sur "De quels identifiants ai-je besoin?"
   4) Cliquer sur Télécharger, renomer le fichier "client_secret.json" et placer le dans
 le repertoire jarvis/plugins/jarvis-calendar/python
 - Cliquez sur "OK"
+
+
+
+
+##Pour ceux qui ont le problème d'activation de l'API avec leur navigateur :
+##"If your browser is on a different machine then exit and re-run this application
+##with the command-line parameter
+
+##--noauth_local_webserver
+
+
+Voici la solution :
+Sur une machine possédant un navigateur internet :
+- installez la librairie googleAPI :
+  sudo pip install --upgrade google-api-python-client
+
+- lancez le script 'google-calendar-permission.py'
+
+Une page d'autorisation doit se lancer dans votre navigateur, choisissez le compte
+google dont vous voulez autoriser l'acces et cliquez sur "Autoriser"
+
+Récupérer le fichier 'Calendar-python-quickstart.json' et coller le dans
+votre Raspberry, dossier '/home/pi/.credentials/'
+
+
+
+Si vous êtes sous Windows
+Installez python3
+https://www.python.org/downloads/
+
+Python facilite l'installation de module en évitant l'étape de téléchargement.
+Il faut pour cela d'abord intaller deux packages :
+- distribute
+- pip
+
+Suivez les instructions de se site pour installer correctement ces deux packages
+http://www.xavierdupre.fr/blog/2013-05-10_nojs.html
+
+Via l'invite de commande windows, placez-vous dans le repertoire 'python/Scripts'.
+Chez moi il se trouve ici : 'C:\Users\RobyBioloid\AppData\Local\Programs\Python\Python36-32\Scripts'
+
+tapez la commande
+pip install --upgrade google-api-python-client
+
+Lancez le script 'google-calendar-permission.py'
+
+Une page d'autorisation doit se lancer dans votre navigateur, choisissez le compte
+google dont vous voulez autoriser l'acces et cliquez sur "Autoriser"
+
+Récupérer le fichier 'C:\Users\RobyBioloid\.credentials\Calendar-python-quickstart.json' et coller le dans
+votre Raspberry, dossier '/home/pi/.credentials/'

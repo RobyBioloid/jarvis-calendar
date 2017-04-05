@@ -45,8 +45,6 @@ def lookForEvent():
         except :
             summ = "Sans titre"
 
-        print("summ = " + summ)
-        print("summary = " + summary)
         if summary == summ :
             eventFound = True
             
@@ -90,11 +88,11 @@ def lookForEvent():
             except :
                 description = "Pas de description"
                 
-            reply = reply + u"L'événement " + summary + u" est prévu pour " + date + heure + "\n"
+            reply = reply + u"L'événement " + summary + u" est prévu pour " + date + heure + ".\n"
             break
             
     if eventFound == False :
-        reply = reply + u"Aucun événement trouvé sous le nom " + summary + "\n"
+        reply = reply + u"Aucun événement trouvé sous le nom " + summary + ".\n"
 
     file = open(EVENT_PATH, "w")
     file.write(reply.encode('utf-8'))

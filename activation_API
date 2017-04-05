@@ -39,13 +39,15 @@ Voici la solution :
 Sur une machine possédant un navigateur internet :
 - installez la librairie googleAPI :
   sudo pip install --upgrade google-api-python-client
+  
+- Placer le fichier 'client_secret.json' ou sera exécuté le script
 
 - lancez le script 'google-calendar-permission.py'
 
 Une page d'autorisation doit se lancer dans votre navigateur, choisissez le compte
 google dont vous voulez autoriser l'acces et cliquez sur "Autoriser"
 
-Récupérer le fichier 'Calendar-python-quickstart.json' et coller le dans
+- Récupérer le fichier 'Calendar-python-quickstart.json' et coller le dans
 votre Raspberry, dossier '/home/pi/.credentials/'
 
 
@@ -59,19 +61,21 @@ Il faut pour cela d'abord intaller deux packages :
 - distribute
 - pip
 
-Suivez les instructions de se site pour installer correctement ces deux packages
+- Suivez les instructions de se site pour installer correctement ces deux packages
 http://www.xavierdupre.fr/blog/2013-05-10_nojs.html
 
-Via l'invite de commande windows, placez-vous dans le repertoire 'python/Scripts'.
+- Via l'invite de commande windows, placez-vous dans le repertoire 'python/Scripts'.
 Chez moi il se trouve ici : 'C:\Users\RobyBioloid\AppData\Local\Programs\Python\Python36-32\Scripts'
 
-tapez la commande
+- tapez la commande
 pip install --upgrade google-api-python-client
 
-Lancez le script 'google-calendar-permission.py'
+- Placer le fichier 'client_secret.json' ou sera exécuté le script
+
+- Lancez le script 'google-calendar-permission.py'
 
 Une page d'autorisation doit se lancer dans votre navigateur, choisissez le compte
 google dont vous voulez autoriser l'acces et cliquez sur "Autoriser"
 
-Récupérer le fichier 'C:\Users\RobyBioloid\.credentials\Calendar-python-quickstart.json' et coller le dans
+- Récupérer le fichier 'C:\Users\RobyBioloid\.credentials\Calendar-python-quickstart.json' et coller le dans
 votre Raspberry, dossier '/home/pi/.credentials/'

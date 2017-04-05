@@ -1,5 +1,6 @@
 ## Activation de l'API Google Calendar
-a) Rendez-vous sur cet adresse https://console.developers.google.com/flows/enableapi?apiid=calendar afin de créer ou sélectionner un projet dans la console Google Developers et activer automatiquement l'API.
+a) Rendez-vous sur cet adresse https://console.developers.google.com/flows/enableapi?apiid=calendar afin de créer ou sélectionner 
+un projet dans la console Google Developers et activer automatiquement l'API.
 - Cliquez sur "Continuer",
 - Cliquez sur "Passer à l'étape "Identifiants".
 

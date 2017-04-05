@@ -10,7 +10,7 @@ import datetime
 
 def tomorrowEvent():
     " Fonction de recherche des événement pour le lendemain"
-    reply = "Je regarde.\n"
+    reply = ""
 
     # Parametrage de l'aplication
     credentials = get_credentials()
@@ -57,7 +57,7 @@ def tomorrowEvent():
     if i == 0 :
         reply += u"Vous n'avez pas d'événements de prévus pour demain\n"
     elif i == 1 :
-        reply += "Vous avez 1 événement de prévu pour demain\n" + evenements
+        reply += u"Vous avez 1 événement de prévu pour demain\n" + evenements
     else :
         reply += "Vous avez " + str(i) + u" événements prévus pour demain\n" + evenements
         

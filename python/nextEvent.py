@@ -15,7 +15,7 @@ def nextEvent():
 
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     eventsResult = service.events().list(
-        calendarId='primary', timeMin=now, maxResults=10, singleEvents=True,
+        calendarId='primary', timeMin=now, maxResults=5, singleEvents=True,
         orderBy='startTime').execute()
     events = eventsResult.get('items', [])
 
@@ -28,37 +28,37 @@ def nextEvent():
         
     for event in events:
         debut= event['start'].get('dateTime')
-		if debut == None :
-		    debut = event['start'].get('date')
+        if debut == None :
+            debut = event['start'].get('date')
                 
             # Formatage de la date
-            if debut[8:10] == now[8:10] :
-                date = "aujourd'hui"
+            if int(debut[8:10]) == int(now[8:10]) :
+                date = "Aujourd'hui "
             elif int(debut[8:10])-1 == int(now[8:10]) :
-                date = "demain"
+                date = "Demain "
             else :
-                date = "le " + str(debut[8:10]) + " " + str(get_strMonth(debut[5:7])) + " " + str(debut[0:4])
+                date = "Le " + str(debut[8:10]) + " " + str(get_strMonth(debut[5:7])) + " " + str(debut[0:4]) + " "
             heure = ""
-
-		else :
-			# Formatage de la date
-			if debut[8:10] == now[8:10] :
-				date = "Aujourd'hui"
-			elif int(debut[8:10])-1 == int(now[8:10]) :
-				date = "Demain"
-			else :
-				date = "Le " + debut[8:10] + " " + get_strMonth(debut[5:7]) + " " + debut[0:4]
+                
+        else :
+            # Formatage de la date
+            if debut[8:10] == now[8:10] :
+                date = "Aujourd'hui "
+            elif int(debut[8:10])-1 == int(now[8:10]) :
+                date = "Demain "
+            else :
+                date = "Le " + debut[8:10] + " " + get_strMonth(debut[5:7]) + " " + debut[0:4] + " "
             
-			# Formatage de l'heure
-			heure = u"à " + debut[11:13] + " heure"
-			if debut[14:16] != "00" :
-				heure = heure + " " + debut[14:16]
+            # Formatage de l'heure
+            heure = u"à " + debut[11:13] + " heure"
+            if debut[14:16] != "00" :
+                heure = heure + " " + debut[14:16]
 
         try :
-			fin = event['end'].get('dateTime')
-		except :
-			fin = date
-			
+            fin = event['end'].get('dateTime')
+        except :
+            fin = date
+            
         try :
             summary = event['summary']
         except :

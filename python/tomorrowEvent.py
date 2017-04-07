@@ -28,25 +28,24 @@ def tomorrowEvent():
     evenements = ""
     for event in events:
         debut= event['start'].get('dateTime')
-		if debut == None :
-		    debut = event['start'].get('date')
+        if debut == None :
+            debut = event['start'].get('date')
                 
             # Formatage de la date
             if int(debut[8:10])-1 == int(now[8:10]) :
-				i += 1
-                date = "demain"
-            heure = ""
-
-		else :
-			# Vérification de la date
-			if debut[0:4] == now[0:4] and debut[5:7] == now[5:7] and int(debut[8:10])-1 == int(now[8:10]) :
-				i += 1
-				date = "Demain"
-				
-				# Formatage de l'heure
-				heure = u"à " + debut[11:13] + " heure"
-				if debut[14:16] != "00" :
-					heure = heure + " " + debut[14:16]
+                i += 1
+                date = "Demain "
+                heure = ""
+                
+        else :
+            # Vérification de la date
+            if debut[0:4] == now[0:4] and debut[5:7] == now[5:7] and int(debut[8:10])-1 == int(now[8:10]) :
+                i += 1
+                date = "Demain "
+                # Formatage de l'heure
+                heure = u"à " + debut[11:13] + " heure"
+                if debut[14:16] != "00" :
+                    heure = heure + " " + debut[14:16]
 
         try :
             summary = event['summary']
@@ -63,9 +62,10 @@ def tomorrowEvent():
         except :
             description = "Pas de description"
 
-		if date == "demain"
-			evenements += date + heure + u", vous avez l'événement : " + summary + ".\n"
-			
+        if date == "Demain " :
+            evenements += date + heure + u", vous avez l'événement : " + summary + ".\n"
+            date = ""
+            
     if i == 0 :
         reply += u"Vous n'avez pas d'événements de prévus pour demain\n"
     elif i == 1 :

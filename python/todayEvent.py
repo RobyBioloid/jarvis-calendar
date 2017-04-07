@@ -26,33 +26,46 @@ def todayEvent():
     i = 0
     evenements = ""
     for event in events:
+        date = ""
         debut= event['start'].get('dateTime')
+        if debut == None :
+            debut = event['start'].get('date')
+                
+            # Formatage de la date
+            if int(debut[8:10]) == int(now[8:10]) :
+                i += 1
+                date = "Aujourd'hui "
+                heure = ""
+                
+        else :
+            # Formatage de la date
+            if debut[0:10] == now[0:10] :
+                i += 1
+                date = "Aujourd'hui "
+                # Formatage de l'heure
+                heure = u"à " + debut[11:13] + " heure"
+                if debut[14:16] != "00" :
+                    heure = heure + " " + debut[14:16]
 
-        # Formatage de la date
-        if debut[0:10] == now[0:10] :
-            i += 1
-            date = "Aujourd'hui"
-            # Formatage de l'heure
-            heure = debut[11:13] + " heure"
-            if debut[14:16] != "00" :
-                heure = heure + " " + debut[14:16]
+        try :
+            summary = event['summary']
+        except :
+            summary = "Sans titre"
 
-            try :
-                summary = event['summary']
-            except :
-                summary = "Sans titre"
+        try :
+            location = event['location']
+        except :
+            location = "Aucun lieu défini"
 
-            try :
-                location = event['location']
-            except :
-                location = "Aucun lieu défini"
+        try :
+            description = event['description']
+        except :
+            description = "Pas de description"
 
-            try :
-                description = event['description']
-            except :
-                description = "Pas de description"
-
-            evenements += date + u" à " + heure + u", vous avez l'événement : " + summary + ".\n"
+        if date == "Aujourd'hui " :
+            evenements += date + heure + u", vous avez l'événement : " + summary + ".\n"
+            date = ""
+            
     if i ==  0:
         reply += u"Aucun événements de prévus pour aujourd'hui.\n"
     elif i == 1 :

@@ -32,12 +32,9 @@ def tomorrowEvent():
 		    debut = event['start'].get('date')
                 
             # Formatage de la date
-            if debut[8:10] == now[8:10] :
-                date = "aujourd'hui"
-            elif int(debut[8:10])-1 == int(now[8:10]) :
+            if int(debut[8:10])-1 == int(now[8:10]) :
+				i += 1
                 date = "demain"
-            else :
-                date = "le " + str(debut[8:10]) + " " + str(get_strMonth(debut[5:7])) + " " + str(debut[0:4])
             heure = ""
 
 		else :
@@ -51,22 +48,24 @@ def tomorrowEvent():
 				if debut[14:16] != "00" :
 					heure = heure + " " + debut[14:16]
 
-            try :
-                summary = event['summary']
-            except :
-                summary = "Sans titre"
+        try :
+            summary = event['summary']
+        except :
+            summary = "Sans titre"
 
-            try :
-                location = event['location']
-            except :
-                location = "Aucun lieu défini"
+        try :
+            location = event['location']
+        except :
+            location = "Aucun lieu défini"
 
-            try :
-                description = event['description']
-            except :
-                description = "Pas de description"
+        try :
+            description = event['description']
+        except :
+            description = "Pas de description"
 
-            evenements += date + heure + u", vous avez l'événement : " + summary + ".\n"
+		if date == "demain"
+			evenements += date + heure + u", vous avez l'événement : " + summary + ".\n"
+			
     if i == 0 :
         reply += u"Vous n'avez pas d'événements de prévus pour demain\n"
     elif i == 1 :

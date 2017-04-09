@@ -27,6 +27,7 @@ def tomorrowEvent():
     i = 0
     evenements = ""
     for event in events:
+        date = ""
         debut= event['start'].get('dateTime')
         if debut == None :
             debut = event['start'].get('date')

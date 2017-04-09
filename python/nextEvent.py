@@ -34,7 +34,7 @@ def nextEvent():
             # Formatage de la date
             if int(debut[8:10]) == int(now[8:10]) :
                 date = "Aujourd'hui "
-            elif int(debut[8:10])-1 == int(now[8:10]) :
+            elif debut[0:4] == now[0:4] and debut[5:7] == now[5:7] and int(debut[8:10])-1 == int(now[8:10]) :
                 date = "Demain "
             else :
                 date = "Le " + str(debut[8:10]) + " " + str(get_strMonth(debut[5:7])) + " " + str(debut[0:4]) + " "
@@ -44,7 +44,7 @@ def nextEvent():
             # Formatage de la date
             if debut[8:10] == now[8:10] :
                 date = "Aujourd'hui "
-            elif int(debut[8:10])-1 == int(now[8:10]) :
+            elif debut[0:4] == now[0:4] and debut[5:7] == now[5:7] and int(debut[8:10])-1 == int(now[8:10]) :
                 date = "Demain "
             else :
                 date = "Le " + debut[8:10] + " " + get_strMonth(debut[5:7]) + " " + debut[0:4] + " "

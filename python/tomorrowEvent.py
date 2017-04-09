@@ -33,7 +33,7 @@ def tomorrowEvent():
             debut = event['start'].get('date')
                 
             # Formatage de la date
-            if int(debut[8:10])-1 == int(now[8:10]) :
+            if debut[0:4] == now[0:4] and debut[5:7] == now[5:7] and int(debut[8:10])-1 == int(now[8:10]) :
                 i += 1
                 date = "Demain "
                 heure = ""

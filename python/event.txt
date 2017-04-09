@@ -1,1 +1,2 @@
-Pensez à Activer l'API Google Calendar comme exliqué dans le fichier 'activation_API' et pensez également à déposer le fichier client_secret.json dans le dossier "python" .
+Vous avez 1 événement de prévu pour demain
+Demain , vous avez l'événement : TEst.

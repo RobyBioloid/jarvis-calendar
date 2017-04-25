@@ -15,11 +15,11 @@ except ImportError:
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/calendar-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/calendar'
-CLIENT_SECRET_FILE = '/home/pi/jarvis/plugins/jarvis-calendar/python/client_secret.json'
+CLIENT_SECRET_FILE = '/home/pi/jarvis/plugins_installed/jarvis-calendar/python/client_secret.json'
 APPLICATION_NAME = 'Google Calendar API'
 
-EVENT_PATH = os.getcwd() + "/plugins/jarvis-calendar/python/event.txt"
-CHECK_PATH = os.getcwd() + "/plugins/jarvis-calendar/python/check.txt"
+EVENT_PATH = os.getcwd() + "/plugins_installed/jarvis-calendar/python/event.txt"
+CHECK_PATH = os.getcwd() + "/plugins_installed/jarvis-calendar/python/check.txt"
 
 def get_jetLag() :
     today = date.today()

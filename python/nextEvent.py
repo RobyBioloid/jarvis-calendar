@@ -7,7 +7,7 @@ from toolsEvent import *
 import datetime
 
 def nextEvent():
-    "Fonction qui retourne les 10 prochains événements" 
+    "Fonction qui retourne le prochain événement" 
     reply = ""
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
@@ -15,16 +15,16 @@ def nextEvent():
 
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     eventsResult = service.events().list(
-        calendarId='primary', timeMin=now, maxResults=5, singleEvents=True,
+        calendarId='primary', timeMin=now, maxResults=1, singleEvents=True,
         orderBy='startTime').execute()
     events = eventsResult.get('items', [])
 
     if not events:
-        reply += u"vous n'avez aucun événements de prévus.\n"
+        reply += u"Vous n'avez aucun événements de prévus.\n"
     elif len(events) == 1:
-        reply += "Votre avez 1 événement de prévu :\n"
+        reply += "Votre prochain événement de prévu est :\n"
     else:      
-        reply += 'Vos ' + str(len(events)) + u" prochains événements sont :\n"
+        reply += 'Vos ' + str(len(events)) + u" prochains événements de prévus sont :\n"
         
     for event in events:
         debut= event['start'].get('dateTime')

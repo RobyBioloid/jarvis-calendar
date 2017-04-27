@@ -12,4 +12,4 @@
 *QUAND*EVENEMENT (*)==echo "$order" > ~/jarvis/plugins_installed/jarvis-calendar/python/event.txt && jv_calendar_lookForEvent
 *EVENEMENT*JOUR*==echo "" > ~/jarvis/plugins_installed/jarvis-calendar/python/event.txt && jv_calendar_todayEvent
 *EVENEMENT*DEMAIN*==echo "" > ~/jarvis/plugins_installed/jarvis-calendar/python/event.txt && jv_calendar_tomorrowEvent
-*EVENEMENT*==echo "" > ~/jarvis/plugins_installed/jarvis-calendar/python/event.txt && jv_calendar_nextEvent
+*PROCH*EVENEMENT*==echo "" > ~/jarvis/plugins_installed/jarvis-calendar/python/event.txt && jv_calendar_nextEvent

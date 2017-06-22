@@ -22,7 +22,7 @@ def nextEvent():
     if not events:
         reply += u"Vous n'avez aucun événements de prévus.\n"
     elif len(events) == 1:
-        reply += "Votre prochain événement de prévu est :\n"
+        reply += u"Votre prochain événement de prévu est :\n"
     else:      
         reply += 'Vos ' + str(len(events)) + u" prochains événements de prévus sont :\n"
         
